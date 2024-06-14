@@ -15,11 +15,11 @@ import net.osmand.binary.RouteDataObject;
 import net.osmand.data.LatLon;
 import net.osmand.data.LocationPoint;
 import net.osmand.data.QuadRect;
-import net.osmand.map.WorldRegion;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.settings.backend.ApplicationMode;
 import net.osmand.router.ExitInfo;
+import net.osmand.router.MissingMapsCalculationResult;
 import net.osmand.router.RoutePlannerFrontEnd;
 import net.osmand.router.RouteSegmentResult;
 import net.osmand.router.RoutingContext;
@@ -59,7 +59,7 @@ public class RouteCalculationResult {
 	protected List<RouteDirectionInfo> cacheAgreggatedDirections;
 	protected List<LocationPoint> locationPoints = new ArrayList<>();
 
-	protected List<WorldRegion> missingMaps;
+	protected MissingMapsCalculationResult missingMapsCalculationResult;
 
 	// params
 	protected final ApplicationMode appMode;
@@ -200,12 +200,16 @@ public class RouteCalculationResult {
 		return alarmInfo;
 	}
 
-	public List<WorldRegion> getMissingMaps() {
-		return missingMaps;
+	public void setMissingMapsCalculationResult(MissingMapsCalculationResult missingMapsCalculationResult) {
+		this.missingMapsCalculationResult = missingMapsCalculationResult;
+	}
+
+	public MissingMapsCalculationResult getMissingMapsCalculationResult() {
+		return missingMapsCalculationResult;
 	}
 
 	public boolean hasMissingMaps() {
-		return !Algorithms.isEmpty(missingMaps);
+		return missingMapsCalculationResult != null && missingMapsCalculationResult.hasMissingMaps();
 	}
 
 	public boolean isInitialCalculation() {
@@ -248,7 +252,9 @@ public class RouteCalculationResult {
 					if (locationIndex > interLocations[currentIntermediate]
 							&& getDistanceToLocation(locations, intermediates.get(currentIntermediate), locationIndex) > 50) {
 						RouteDirectionInfo toSplit = localDirections.get(currentDirection);
-						RouteDirectionInfo info = new RouteDirectionInfo(localDirections.get(currentDirection).getAverageSpeed(), TurnType.straight());
+						// intermediate point should split using average speed from its actual (previous) segment
+						float currentAvgSpeed = localDirections.get(Math.max(0, currentDirection - 1)).getAverageSpeed();
+						RouteDirectionInfo info = new RouteDirectionInfo(currentAvgSpeed, TurnType.straight());
 						info.setRef(toSplit.getRef());
 						info.setStreetName(toSplit.getStreetName());
 						info.setRouteDataObject(toSplit.getRouteDataObject());

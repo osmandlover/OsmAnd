@@ -112,7 +112,7 @@
     <string name="map_widget_config">組態螢幕顯示</string>
     <string name="map_widget_back_to_loc">目前位置</string>
     <string name="map_widget_lock_screen">鎖定</string>
-    <string name="map_widget_compass">電子羅盤</string>
+    <string name="map_widget_compass">指南針</string>
     <string name="map_widget_reset">恢復預設</string>
     <string name="map_widget_parking">停車場</string>
     <string name="map_widget_time">剩餘時間</string>
@@ -458,8 +458,8 @@
     <string name="system_locale">系統</string>
     <string name="preferred_locale_descr">應用程式顯示語言（在 OsmAnd 重新啟動後套用）。</string>
     <string name="preferred_locale">顯示語言</string>
-    <string name="shared_string_next">下一頁</string>
-    <string name="shared_string_previous">上一頁</string>
+    <string name="shared_string_next">下一站</string>
+    <string name="shared_string_previous">上一站</string>
     <string name="unit_of_length_descr">變更距離的測量方式。</string>
     <string name="unit_of_length">長度單位</string>
     <string name="si_mi_feet">英哩/英呎</string>
@@ -570,7 +570,7 @@
     <string name="transport_context_menu">搜尋公車站牌</string>
     <string name="poi_context_menu_modify">修改 POI</string>
     <string name="poi_context_menu_delete">刪除 POI</string>
-    <string name="rotate_map_compass_opt">羅盤方向</string>
+    <string name="rotate_map_compass_opt">指南針方向</string>
     <string name="rotate_map_bearing_opt">行進方向</string>
     <string name="rotate_map_north_opt">北方向上</string>
     <string name="rotate_map_to_descr">地圖對齊方式：</string>
@@ -1197,7 +1197,7 @@
     <string name="rendering_attr_moreDetailed_name">更多細節</string>
     <string name="rendering_attr_lessDetailed_name">較少細節</string>
     <string name="rendering_attr_hideAccess_name">存取限制</string>
-    <string name="rendering_attr_showAccess_name">顯示進入限制</string>
+    <string name="rendering_attr_showAccess_name">顯示進入與收費限制</string>
     <string name="rendering_attr_showSurfaceGrade_name">顯示道路品質</string>
     <string name="rendering_attr_showSurfaces_name">顯示路面</string>
     <string name="rendering_attr_showCycleRoutes_name">自行車路線</string>
@@ -4464,7 +4464,7 @@
     <string name="rendering_attr_OSMMapperAssistantNote_description">顯示註記標籤</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_name">低縮放程度的圖示</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_description">低縮放程度圖示的示意圖</string>
-    <string name="rendering_attr_showWaterwayTunnels_name">水路隧道</string>
+    <string name="rendering_attr_showWaterwayTunnels_name">不要隱藏水路隧道</string>
     <string name="rendering_attr_showWaterwayTunnels_description">不要隱藏水路隧道</string>
     <string name="rendering_attr_OSMMapperAssistantFixme_name">Fixme 標籤</string>
     <string name="shared_string_open_street_map">OpenStreetMap</string>
@@ -5009,7 +5009,6 @@
     <string name="sound_beep_minimal">蜂鳴器：最小</string>
     <string name="last_synchronized">最後同步</string>
     <string name="display_position_automatic_descr">取決於地圖方向：底部為移動方向，中心為其他所有方向。</string>
-    <string name="change_default_tracks_appearance_confirmation_description">變更 %1$s 軌跡的外觀？</string>
     <string name="empty_tracks">您沒有軌跡檔案。</string>
     <string name="shared_string_apply_changes">套用變更</string>
     <string name="shared_string_select_recent">選取最近</string>
@@ -5195,7 +5194,7 @@
     <string name="map_3d_mode_description">用兩隻手指觸摸地圖並上下移動以調整地圖傾斜。</string>
     <string name="show_all_tracks_on_the_map">在地圖上顯示所有軌跡</string>
     <string name="delete_folder_question">刪除資料夾？</string>
-    <string name="delete_track_folder_dialog_message">這將會刪除「%1$s」資料夾與其包含的所有軌跡 (%2$s)。</string>
+    <string name="delete_track_folder_dialog_message">這將會刪除資料夾「%1$s」與其包含的全部 %2$s 個軌跡。</string>
     <string name="delete_folder">刪除資料夾</string>
     <string name="rssi_widget_desc">顯示您外部裝置的 RSSI 層級。</string>
     <string name="map_widget_rssi">RSSI</string>
@@ -5476,7 +5475,7 @@
     <string name="empty_name">空名稱</string>
     <string name="edit_filter">編輯篩選條件</string>
     <string name="save_as_smart_folder">另存為智慧型資料夾</string>
-    <string name="delete_smart_folder_dialog_message">這將會刪除「%1$s」智慧型資料夾。</string>
+    <string name="delete_smart_folder_dialog_message">這將會移除智慧型資料夾「%1$s」。（不會刪除任何軌跡。）</string>
     <string name="empty_smart_folder_title">沒有相符的軌跡</string>
     <string name="empty_smart_folder_description">相符的軌跡會出現在此</string>
     <string name="configure_filter">設定篩選條件</string>
@@ -5641,6 +5640,8 @@
 \n
 \n • 新增了按軌跡的感應器資料過濾功能
 \n
+\n • 改善的軌跡群組外觀自訂
+\n
 \n • 新增了對其他 GPX 標籤的支援
 \n
 \n • 自訂「導航期間的距離」：在精確數字或四捨五入數字之間進行選擇
@@ -5663,7 +5664,76 @@
     <string name="shared_string_unchanged">未變更</string>
     <string name="gpx_approximation_cpp">以路徑規劃為基礎 (C++)</string>
     <string name="gpx_approximation_java">以路徑規劃為基礎 (Java)</string>
-    <string name="gpx_approximation_geo_java">以幾何為基礎 (Java，快速)</string>
+    <string name="gpx_approximation_geo_java">以幾何為基礎（Java，快速）</string>
     <string name="fix_north_up_descr">請勿在北方向上的地圖中使用手勢旋轉地圖</string>
     <string name="fix_north_up">啟用固定北方向上</string>
+    <string name="change_default_appearance_confirmation">變更 %1$s 的預設外觀？</string>
+    <string name="use_3d_track_visualization">3D 視覺化</string>
+    <string name="change_default_tracks_appearance_confirmation">套用變更到資料夾中既有的軌跡或是僅套用到新的？</string>
+    <string name="shared_string_changes">變更</string>
+    <string name="apply_only_to_new">僅套用到新的</string>
+    <string name="release_4_8">• 為 4.8 準備</string>
+    <string name="shared_string_scale">比例尺</string>
+    <string name="vertical_exaggeration">垂直誇大</string>
+    <string name="relief_3d_download_description">需要額外的地圖才能在地圖上檢視地形。</string>
+    <string name="vertical_exaggeration_description">透過變更比例尺的值，您可以強調 3D 地形。</string>
+    <string name="use_terrain_maps">使用地形圖</string>
+    <string name="use_nearby_roads_summary">使用離線地圖尋找附近的道路與相對高度資料。可以調整軌跡幾何形狀。</string>
+    <string name="use_nearby_roads">使用附近的道路</string>
+    <string name="delete_actions_button_confirmation">您確定要刪除「%1$s」以及所有新增的動作嗎？</string>
+    <string name="delete_actions_button">刪除按鈕</string>
+    <string name="use_terrain_maps_summary">使用地形圖取得相對高度資料。軌跡幾何形狀保持不變。</string>
+    <string name="shared_string_osm_id">OSM ID</string>
+    <string name="retrieve_elevation_data_summary">OsmAnd 可以從附近的道路或地形圖擷取相對高度資料。</string>
+    <string name="required_maps">所需的地圖</string>
+    <string name="missing_maps_header">缺少或過時的地圖</string>
+    <string name="maps_that_also_be_used">也可以使用的地圖：%1$s</string>
+    <string name="getting_list_of_required_maps">取得所需地圖的清單……</string>
+    <string name="required_maps_calculate_online_summary">缺少的地圖清單是以直線路線為基礎。為了取得準確的地圖清單，OsmAnd 可以線上預先計算您的路線。</string>
+    <string name="missing_maps_description">此路線所需的一些離線地圖遺失或非最新。請下載貨更新這些地圖。</string>
+    <string name="route_line_use_coloring_speed">路線根據移動速度著色。</string>
+    <string name="route_line_use_coloring_altitude">路線根據海拔高度著色。</string>
+    <string name="visualized_by">視覺化方式</string>
+    <string name="wall_color">牆壁顏色</string>
+    <string name="track_line">軌跡線</string>
+    <string name="fixed_height">固定高度</string>
+    <string name="downward_gradient">向下斜率</string>
+    <string name="upward_gradient">向上斜率</string>
+    <string name="top">頂部</string>
+    <string name="bottom">底部</string>
+    <string name="top_and_bottom">頂部與底部</string>
+    <string name="title_3d_track">3D 軌跡</string>
+    <string name="explore_3d_track_description">以互動式 3D 方式探索軌跡！在地圖上直接視覺化高度、速度等。</string>
+    <string name="gpx_approximation_geo_cpp">以幾何為基礎（C++，快速）</string>
+    <string name="track_vertical_exaggeration_description">透過變更比例值，您可以變更 3D 軌跡高度。</string>
+    <string name="allow_display_on_top">允許顯示在頂部</string>
+    <string name="allow_display_on_top_description">允許在彼此之上顯示地圖文字</string>
+    <string name="show_debug_info">顯示除錯資訊</string>
+    <string name="show_debug_info_description">顯示關於每個地圖文字位置的圖形資訊</string>
+    <string name="map_text">地圖文字</string>
+    <string name="routing_attr_avoid_cobblestone_name">避免鵝卵石</string>
+    <string name="routing_attr_avoid_cobblestone_description">避免鵝卵石</string>
+    <string name="steps_per_minute_unit">步數每分鐘</string>
+    <string name="disable_map_layers_descr">停用向量地圖上的所有地圖圖層（需要重新啟動）。</string>
+    <string name="disable_map_layers">停用地圖圖層</string>
+    <string name="height_legend_description">海拔顏色圖用於視覺化地形。</string>
+    <string name="change_terrain_color_scheme">變更地形配色方案</string>
+    <string name="play_weather_forecast">播放天氣預報</string>
+    <string name="travel_topics">旅遊話題</string>
+    <string name="wall_height">牆的高度</string>
+    <string name="rendering_value_dark_orange_name">深橘色</string>
+    <string name="clear_all_key_shortcuts_summary">將會移除所選類型的所有按鍵分配。</string>
+    <string name="shared_string_key">鍵</string>
+    <string name="assigned_keys">分配按鍵</string>
+    <string name="clear_all_key_shortcuts">清除所有快捷鍵</string>
+    <string name="no_assigned_keys_desc">選擇一個操作並透過點擊「新增」按鈕分配一個鍵。</string>
+    <string name="new_key_assignment">分配新按鍵</string>
+    <string name="key_assignment_add_action">新增動作</string>
+    <string name="clear_key_assignment_summary">將會清除所選動作的按鍵分配。</string>
+    <string name="no_assigned_keys">沒有分配的按鍵</string>
+    <string name="key_name_pattern">按鍵「%1$s」</string>
+    <string name="key_assignment_add_key">新增鍵</string>
+    <string name="action_icon">動作圖示</string>
+    <string name="user_palette">使用者調色板</string>
+    <string name="shared_string_colors">顏色</string>
 </resources>

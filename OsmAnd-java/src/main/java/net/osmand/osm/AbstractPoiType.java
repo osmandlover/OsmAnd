@@ -48,7 +48,14 @@ public abstract class AbstractPoiType {
 	}
 
 	public String getIconKeyName() {
-		String kn = getKeyName();
+		return getFormattedKeyName();
+	}
+
+	public String getFormattedKeyName() {
+		return formatKeyName(getKeyName());
+	}
+
+	protected String formatKeyName(String kn) {
 		if (kn.startsWith("osmand_")) {
 			kn = kn.substring("osmand_".length());
 		}
@@ -82,7 +89,7 @@ public abstract class AbstractPoiType {
 	}
 
 	public String getEnTranslation() {
-		if(enTranslation == null) {
+		if (enTranslation == null) {
 			enTranslation = registry.getEnTranslation(this);
 		}
 		return enTranslation;

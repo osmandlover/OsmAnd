@@ -635,7 +635,7 @@
     <string name="rendering_attr_moreDetailed_name">Pli detaloj</string>
     <string name="rendering_attr_lessDetailed_name">Malpli detaloj</string>
     <string name="rendering_attr_hideAccess_name">Aliraj baroj</string>
-    <string name="rendering_attr_showAccess_name">Aliraj baroj</string>
+    <string name="rendering_attr_showAccess_name">Aliraj baroj kaj vojpagejoj</string>
     <string name="rendering_attr_showSurfaceGrade_name">Kvalito de vojoj</string>
     <string name="rendering_attr_showSurfaces_name">Pavimo de vojoj</string>
     <string name="rendering_attr_showCycleRoutes_name">Biciklaj kursoj</string>
@@ -4464,8 +4464,8 @@
     <string name="rendering_attr_OSMMapperAssistantNote_description">Montri ŝlosilojn «note»</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_name">Bildsimboloj je malgrandigo</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_description">Skiza montrado de bildsimboloj je malaltaj skal-niveloj</string>
-    <string name="rendering_attr_showWaterwayTunnels_name">Tuneloj de akvovojoj</string>
-    <string name="rendering_attr_showWaterwayTunnels_description">Ne kaŝi akvovojojn en tuneloj</string>
+    <string name="rendering_attr_showWaterwayTunnels_name">Plividebligi akvovojojn en tuneloj</string>
+    <string name="rendering_attr_showWaterwayTunnels_description">Plividebligi akvovojojn en tuneloj</string>
     <string name="shared_string_not_used">Neuzata</string>
     <string name="shared_string_used">Uzata</string>
     <string name="files_with_route_restrictions">Dosieroj kun vojaj limigoj</string>
@@ -5016,7 +5016,6 @@
     <string name="shared_string_kilograms">kilogramoj</string>
     <string name="shared_string_yards">jardoj</string>
     <string name="shared_string_apply_changes">Apliki ŝanĝojn</string>
-    <string name="change_default_tracks_appearance_confirmation_description">Ĉu ŝanĝi aspekton de %1$s spuro(j)\?</string>
     <string name="recently_visible">Antaŭe vidigitaj %1$s</string>
     <string name="no_visible_tracks_description">Elektu spurojn por vidigi ilin sur la mapo.</string>
     <string name="no_visible_tracks">Neniu spuro sur la mapo</string>
@@ -5526,7 +5525,7 @@
     <string name="shared_string_show_icon">Montri emblemon</string>
     <string name="shared_string_delete_immediately">Forigi senprokraste</string>
     <string name="shared_string_loading">Ŝargado</string>
-    <string name="delete_smart_folder_dialog_message">Tio ĉi forigos la inteligentan dosierujon “%1$s”.</string>
+    <string name="delete_smart_folder_dialog_message">Tio ĉi forigos la inteligentan dosierujon “%1$s”. (Neniu spuro foriĝos.)</string>
     <string name="shared_string_is_deleted">%1$s estas forigita.</string>
     <string name="cloud_item_restored">%1$s estas restarigita al OsmAnd-Nubo.</string>
     <string name="trash_alert_card_desc">Objektoj en la rubujo estos forigitaj post %1$s tagoj.</string>
@@ -5561,7 +5560,7 @@
     <string name="tripltek_promo">Promocio Tripltek por %1$s monato(j)</string>
     <string name="tripltek_promo_description">Senpaga aliro interalie al senlimaj elŝutoj de mapoj, 3-dimensia map-reliefo kaj pli por %1$s monato(j)</string>
     <string name="shared_string_reassign">Reatribui</string>
-    <string name="reset_key_assignments">Reagordi klav-asingojn</string>
+    <string name="reset_key_assignments">Reagordi klav-asignojn</string>
     <string name="target_elevation">Alcela altitudo</string>
     <string name="remove_widget_first">Unue forigu la fenestraĵon</string>
     <string name="lang_zh_hant">Ĉina tradicia</string>
@@ -5644,7 +5643,9 @@
 \n
 \n • plibonigita legeblo de datumoj sur diagramoj
 \n
-\n • eblo filtri suprojn laŭ datumoj de eksteraj sentiloj
+\n • eblo filtri spurojn laŭ datumoj de eksteraj sentiloj
+\n
+\n • plibonigita alĝustigeblo de aspekto de grupoj de spuroj
 \n
 \n • subteno por pliajn etikedojn por GPX
 \n
@@ -5671,4 +5672,70 @@
     <string name="gpx_approximation_cpp">Surbaze de kurso (C++)</string>
     <string name="gpx_approximation_java">Surbaze de kurso (Java)</string>
     <string name="gpx_approximation_geo_java">Surbaze de geometrio (Java) (rapide)</string>
+    <string name="use_nearby_roads_summary">Uzas malkonektan mapon por akiri proksimajn vojojn kaj iliajn datumojn pri altitudo. Geometrio de la spuro povos ŝanĝiĝi.</string>
+    <string name="use_nearby_roads">Uzi proksimajn vojojn</string>
+    <string name="use_terrain_maps">Uzi terenajn mapojn</string>
+    <string name="use_terrain_maps_summary">Uzas terenajn mapojn por akiri datumojn pri altitudo. Geometrio de la spuro ne ŝanĝiĝos.</string>
+    <string name="visualized_by">Vidigi per</string>
+    <string name="wall_color">Koloro de muro</string>
+    <string name="track_line">Linio de spuro</string>
+    <string name="route_line_use_coloring_altitude">Kolorigi linion de kurso laŭ altitudo.</string>
+    <string name="delete_actions_button_confirmation">Ĉu forigi “%1$s” kun ĉiuj aldonitaj agoj?</string>
+    <string name="fixed_height">Konstanta alto</string>
+    <string name="downward_gradient">Gradiento malsupren</string>
+    <string name="upward_gradient">Gradiento supren</string>
+    <string name="top">supro</string>
+    <string name="bottom">malsupro</string>
+    <string name="top_and_bottom">supro kaj malsupro</string>
+    <string name="title_3d_track">3-dimensia spuro</string>
+    <string name="explore_3d_track_description">Vidu la spuron interage en 3D! Bildigi altitudon, rapidon kaj pli senpere sur la mapo.</string>
+    <string name="maps_that_also_be_used">Aliaj uzotaj mapoj: %1$s</string>
+    <string name="getting_list_of_required_maps">Akirado de listo de necesaj mapoj…</string>
+    <string name="required_maps_calculate_online_summary">La listo de mankaj mapoj baziĝas sur kurso en rekta linio. Por akiri la precizan liston de mapoj, OsmAnd povas antaŭkalkuli vian kurson enrete.</string>
+    <string name="required_maps">Necesaj mapoj</string>
+    <string name="missing_maps_description">Kelkaj malkonektaj mapoj necesaj por kalkuli tiun ĉi kurson mankas aŭ estas neĝisdataj. Elŝutu aŭ ĝisdatigu tiujn ĉi mapojn.</string>
+    <string name="missing_maps_header">Mankaj aŭ neĝisdataj mapoj</string>
+    <string name="delete_actions_button">Forigi butonon</string>
+    <string name="retrieve_elevation_data_summary">OsmAnd povas akiri datumojn pri altitudo el proksimaj vojoj aŭ el terenaj mapoj.</string>
+    <string name="route_line_use_coloring_speed">Kolorigi linion de kurso laŭ rapido de movado.</string>
+    <string name="relief_3d_download_description">Pliaj mapoj necesas por vidi detalojn de tereno sur la mapo.</string>
+    <string name="shared_string_scale">Skali</string>
+    <string name="shared_string_osm_id">OSM-identigilo</string>
+    <string name="change_default_appearance_confirmation">Ĉu ŝanĝi la implicitan aspekton de %1$s?</string>
+    <string name="vertical_exaggeration_description">Per ŝanĝi la valoron de skalo vi povas emfazi la 3-dimensian map-reliefon.</string>
+    <string name="vertical_exaggeration">Vertikala troigo</string>
+    <string name="shared_string_changes">Ŝanĝoj</string>
+    <string name="use_3d_track_visualization">3-dimensia bildigo</string>
+    <string name="apply_only_to_new">Apliki nur al novaj</string>
+    <string name="change_default_tracks_appearance_confirmation">Ĉu apliki ŝanĝojn al ekzistaj spuroj en tiu ĉi dosierujo aŭ nur al novaj?</string>
+    <string name="allow_display_on_top">Permesi kovri tekston per teksto</string>
+    <string name="allow_display_on_top_description">Permesi al etikedoj sur la mapo kovri unu al la alia</string>
+    <string name="show_debug_info">Montri senerarigaj informoj</string>
+    <string name="show_debug_info_description">Montri grafikajn informojn pri lokiĝo de ĉiu teksto sur la mapo</string>
+    <string name="map_text">Etikedoj sur la mapo</string>
+    <string name="routing_attr_avoid_cobblestone_name">Eviti rulŝtonajn kahelojn</string>
+    <string name="routing_attr_avoid_cobblestone_description">Eviti ĝibajn pavimŝtonojn</string>
+    <string name="gpx_approximation_geo_cpp">Surbaze de geometrio (C++) (rapide)</string>
+    <string name="track_vertical_exaggeration_description">Per ŝanĝi la valoron de skalo vi povas ŝanĝi alton de 3-dimensia spuro.</string>
+    <string name="steps_per_minute_unit">paŝoj/min</string>
+    <string name="disable_map_layers_descr">Malaktivigi ĉiujn map-tavolojn super la vektora mapo (postulas restarton).</string>
+    <string name="disable_map_layers">Malaktivigi surtavolojn</string>
+    <string name="height_legend_description">Kolorigitaj altmapoj taŭgas por vidigi map-reliefon.</string>
+    <string name="change_terrain_color_scheme">Ŝanĝi kolor-skemon de tereno</string>
+    <string name="travel_topics">Vojaĝaj temoj</string>
+    <string name="play_weather_forecast">Ruli veterprognozon</string>
+    <string name="wall_height">Alto de muro</string>
+    <string name="clear_key_assignment_summary">Klav-asigno por la elektita ago estos forviŝita.</string>
+    <string name="rendering_value_dark_orange_name">Oranĝkolora malhela</string>
+    <string name="clear_all_key_shortcuts_summary">Ĉiuj klav-asignoj de la elektita speco estos forviŝitaj.</string>
+    <string name="clear_all_key_shortcuts">Forviŝi ĉiujn klav-asignojn</string>
+    <string name="no_assigned_keys_desc">Elektu agon aŭ asignu klavon per frapeti la butonon “Aldoni”.</string>
+    <string name="no_assigned_keys">Neniu asignita klavo</string>
+    <string name="shared_string_key">Klavo</string>
+    <string name="new_key_assignment">Nova klav-asigno</string>
+    <string name="action_icon">Emblemo de ago</string>
+    <string name="key_name_pattern">Klavo “%1$s”</string>
+    <string name="key_assignment_add_key">Aldoni klavon</string>
+    <string name="key_assignment_add_action">Aldoni agon</string>
+    <string name="assigned_keys">Asignitaj klavoj</string>
 </resources>

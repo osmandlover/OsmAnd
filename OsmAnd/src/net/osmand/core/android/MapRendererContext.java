@@ -175,7 +175,9 @@ public class MapRendererContext {
 	}
 
 	protected int getRasterTileSize() {
-		return (int) (getReferenceTileSize() * app.getSettings().MAP_DENSITY.get());
+		float mapDensity = app.getSettings().MAP_DENSITY.get();
+		float mapDensityAligned = mapDensity > 2.0f ? 2.0f : Math.min(mapDensity, 1.0f);
+		return (int) (getReferenceTileSize() * mapDensityAligned);
 	}
 
 	private float getReferenceTileSize() {
@@ -452,6 +454,7 @@ public class MapRendererContext {
 			mapRendererView.addSymbolsProvider(providerType.symbolsSectionIndex, obfMapSymbolsProvider);
 		}
 		recreateHeightmapProvider();
+		updateVerticalExaggerationScale();
 		setMapBackgroundColor();
 	}
 
@@ -468,6 +471,17 @@ public class MapRendererContext {
 			elevationConfiguration.setVisualizationStyle(VisualizationStyle.None);
 		}
 		mapRendererView.setElevationConfiguration(elevationConfiguration);
+	}
+
+	public void updateVerticalExaggerationScale() {
+		MapRendererView mapRendererView = this.mapRendererView;
+		if (mapRendererView == null) {
+			return;
+		}
+		SRTMPlugin plugin = PluginsHelper.getPlugin(SRTMPlugin.class);
+		if (plugin != null) {
+			mapRendererView.setElevationScaleFactor(plugin.getVerticalExaggerationScale());
+		}
 	}
 
 	public void updateCachedHeightmapTiles() {

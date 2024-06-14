@@ -2780,7 +2780,7 @@
     <string name="poi_social_facility_outreach">Sensibilisation</string>
     <string name="poi_social_facility_for_diseased">Malade</string>
     <string name="poi_tomb_rock_cut">Type : coupe de roche</string>
-    <string name="poi_historic_civilization_ancient_roman">Civilisation : ancien romain \'753 av. JC. - 284 ap. JC.)</string>
+    <string name="poi_historic_civilization_ancient_roman">Civilisation : Rome antique (753 av. JC. - 284 ap. JC.)</string>
     <string name="poi_historic_period_early_dynastic_period">Période historique : période dynastique antérieure (3100 - 2686 av. J.-C.)</string>
     <string name="poi_historic_period_first_persian_period">Période historique : première période perse</string>
     <string name="poi_historic_period_late_period">Période historique : période tardive (664 - 332 av. J.-C.)</string>
@@ -4229,7 +4229,7 @@
     <string name="poi_board_type_sight">Vue</string>
     <string name="poi_board_type_sport">Sport</string>
     <string name="poi_board_type_welcome_sign">Panneau de bienvenue</string>
-    <string name="poi_tiles">Magasin de tuiles</string>
+    <string name="poi_tiles">Magasin de carrelage</string>
     <string name="poi_collector">Collectionneur</string>
     <string name="poi_hospice">Hospice</string>
     <string name="poi_skate">Boutique de skate</string>
@@ -4342,15 +4342,15 @@
     <string name="poi_dog_unleashed">Chiens : sans laisse acceptés</string>
     <string name="poi_dog_designated">Désigné pour les chiens</string>
     <string name="poi_playground_balancebeam">Poutre d\'équilibre</string>
-    <string name="poi_playground_playhouse">Théâtre</string>
+    <string name="poi_playground_playhouse">Maison de jeu</string>
     <string name="poi_playground_hopscotch">Marelle</string>
     <string name="poi_playground_sledding">Luge</string>
     <string name="poi_playground_trampoline">Trampoline</string>
     <string name="poi_playground_water">Eau</string>
     <string name="poi_playground_swing">Balançoire</string>
-    <string name="poi_playground_springy">Élastique</string>
-    <string name="poi_playground_roundabout">Rond-point</string>
-    <string name="poi_playground_splash_pad">Pataugeoire</string>
+    <string name="poi_playground_springy">Ressort</string>
+    <string name="poi_playground_roundabout">Tourniquet</string>
+    <string name="poi_playground_splash_pad">Jeux d\'eau</string>
     <string name="poi_playground_structure">Structure</string>
     <string name="poi_playground_climbingframe">Structure d\'escalade</string>
     <string name="poi_playground_climbingwall">Mur d\'escalade</string>
@@ -4375,7 +4375,7 @@
     <string name="poi_parking_fee_filter">Frais de stationnement</string>
     <string name="poi_access_yes">Accès autorisé</string>
     <string name="poi_playground_spinning_circle">Cercle tournant</string>
-    <string name="poi_playground_funnel_ball">Balle pour entonnoir</string>
+    <string name="poi_playground_funnel_ball">Funnel ball</string>
     <string name="poi_climbing_speed_yes">Vitesse : Oui</string>
     <string name="poi_climbing_grade_novice">Novice</string>
     <string name="poi_climbing_grade_beginner">Débutant</string>
@@ -4761,4 +4761,11 @@
     <string name="poi_us_maps_recreation_area_activity_mountain_biking">VTT</string>
     <string name="poi_us_maps_recreation_area_activity_hunting">Chasse</string>
     <string name="poi_us_maps_recreation_area_activity_other_activities">Autre activités</string>
+    <string name="poi_padus_local_manager">Responsable local</string>
+    <string name="poi_padus_manager_type_fullname">Type de gestionnaire</string>
+    <string name="poi_padus_manager_fullname">Gestionnaire</string>
+    <string name="poi_padus_category_designation">Catégorie : désignation</string>
+    <string name="poi_padus_local_designation">Désignation locale</string>
+    <string name="poi_via">Via</string>
+    <string name="poi_padus_category_proclamation">Catégorie : proclamation</string>
 </resources>

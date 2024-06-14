@@ -1419,7 +1419,7 @@
     <string name="shared_string_waypoints">Pontos de rota</string>
     <string name="shared_string_dismiss">Cancelar</string>
     <string name="rendering_category_others">Outros atributos do mapa</string>
-    <string name="rendering_attr_showAccess_name">Mostrar restrições de acesso e portagem</string>
+    <string name="rendering_attr_showAccess_name">Mostrar restrições de acesso e de portagem</string>
     <string name="rendering_attr_showSurfaceGrade_name">Mostrar qualidade da via</string>
     <string name="rendering_attr_showSurfaces_name">Mostrar superfície da via</string>
     <string name="rendering_attr_moreDetailed_name">Mais detalhes</string>
@@ -3948,7 +3948,7 @@
     <string name="shared_string_sec">seg</string>
     <string name="announcement_time_approach">Aproximação</string>
     <string name="announcement_time_prepare_long">Prepare longo</string>
-    <string name="announcement_time_prepare">Prepare</string>
+    <string name="announcement_time_prepare">Preparar</string>
     <string name="announcement_time_off_route">Fora da rota</string>
     <string name="announcement_time_arrive">Chegada ao destino</string>
     <string name="shared_string_turn">Virar</string>
@@ -4260,7 +4260,7 @@
     <string name="benefits_for_contributors_secondary_descr">Autentique-se com a sua conta do OpenStreetMap e veja se está qualificado para obter atualizações de mapas mensais e a cada hora ilimitadas.</string>
     <string name="use_login_and_password">Usar nome de utilizador e palavra-passe</string>
     <string name="available_until">Disponível até %1$s</string>
-    <string name="enough_contributions_descr">Parabéns! Fez contribuições suficientes para o OpenStreetMap e pode desfrutar de atualizações ilimitadas de mapas.</string>
+    <string name="enough_contributions_descr">Parabéns! Fez contribuições suficientes para o OpenStreetMap e pode desfrutar de atualizações ilimitadas de mapas OsmAnd!</string>
     <string name="shared_string_contributions">Contribuições</string>
     <string name="contributions_may_calculate_with_delay">O cálculo das contribuições pode demorar algumas horas.</string>
     <string name="map_updates_are_unavailable_yet">As atualizações do mapa ainda não estão disponíveis :-(</string>
@@ -4479,8 +4479,8 @@
     <string name="rendering_attr_OSMMapperAssistantNote_description">Mostrar observações ou comentários (etiqueta \"note\")</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_name">Ícones em ampliações baixas</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_description">Visualização esquemática de ícones em ampliações baixas</string>
-    <string name="rendering_attr_showWaterwayTunnels_name">Aumentar a visibilidade dos túneis de hidrovias</string>
-    <string name="rendering_attr_showWaterwayTunnels_description">Aumentar a visibilidade dos túneis de hidrovias</string>
+    <string name="rendering_attr_showWaterwayTunnels_name">Aumentar a visibilidade dos túneis fluviais</string>
+    <string name="rendering_attr_showWaterwayTunnels_description">Aumentar a visibilidade dos túneis fluviais</string>
     <string name="rendering_value_category_name">Categoria</string>
     <string name="rendering_value_all_name">Todos</string>
     <string name="rendering_value_omit_name">Omissão</string>
@@ -5021,11 +5021,10 @@
     <string name="sound_beep_simple">Bipe: simples</string>
     <string name="sound_beep_simple_loud">Bipe: simples e alto</string>
     <string name="last_synchronized">Última sincronização</string>
-    <string name="display_position_automatic_descr">Depende da orientação do mapa: a parte inferior para a direção do movimento, o centro para tudo o resto.</string>
+    <string name="display_position_automatic_descr">Depende da orientação do mapa: em baixo para a direção do movimento, ao centro para todas as outras.</string>
     <string name="shared_string_select_recent">Selecionar recente</string>
     <string name="change_appearance">Alterar aparência</string>
     <string name="shared_string_kilograms">quilogramas</string>
-    <string name="change_default_tracks_appearance_confirmation_description">Alterar a aparência dos trilhos %1$s\?</string>
     <string name="shared_string_apply_changes">Aplicar alterações</string>
     <string name="shared_string_yards">jardas</string>
     <string name="no_visible_tracks_description">Selecione os trilhos a mostrar no mapa.</string>
@@ -5213,7 +5212,7 @@
     <string name="save_track_external_sensors_data">Dados</string>
     <string name="tracks_empty_folder">Pasta vazia</string>
     <string name="track_not_recorded">Não gravado</string>
-    <string name="delete_track_folder_dialog_message">Isto eliminará a pasta \"%1$s\" e todos os trilhos (%2$s) incluídos.</string>
+    <string name="delete_track_folder_dialog_message">Isto irá eliminar a pasta \"%1$s\" e todos os %2$s trilhos nela contidas.</string>
     <string name="delete_folder_question">Eliminar pasta\?</string>
     <string name="delete_folder">Eliminar pasta</string>
     <string name="show_all_tracks_on_the_map">Mostrar todos os trilhos no mapa</string>
@@ -5500,7 +5499,7 @@
     <string name="shared_string_delete_immediately">Eliminar imediatamente</string>
     <string name="shared_string_loading">A carregar</string>
     <string name="help_article_navigation_auto_car_name">Android Auto</string>
-    <string name="delete_smart_folder_dialog_message">Isto eliminará a pasta inteligente \"%1$s\".</string>
+    <string name="delete_smart_folder_dialog_message">Isto irá remover a pasta inteligente \"%1$s\". (Nenhum trilho será eliminado).</string>
     <string name="shared_string_is_deleted">%1$s foi eliminado.</string>
     <string name="sort_size_ascending">Tamanho pequeno primeiro</string>
     <string name="help_article_widgets_info_widgets_name">Widgets informativos</string>
@@ -5629,7 +5628,7 @@
     <string name="speed_limit_warning">Aviso de limite de velocidade</string>
     <string name="shared_string_limit">Limite</string>
     <string name="when_exceeded">Quando excedido</string>
-    <string name="speedometer_description">Mostra a velocidade atual detetada pelo GPS</string>
+    <string name="speedometer_description">Mostra a sua velocidade atual conforme indicada pelo GPS</string>
     <string name="help_article_setup_a_route_name">Configurar uma rota</string>
     <string name="rendering_attr_padusDisplayMode_description">Por tipo de acesso ou nome do gestor</string>
     <string name="rendering_value_access_name">Por tipo de acesso</string>
@@ -5650,13 +5649,13 @@
     <string name="lang_ta_in">Tâmil (Índia)</string>
     <string name="release_4_7">- Novo widget \"Velocímetro\" compatível com Android Auto
 \n
-\n - Configuração do ecrã do mapa adicionando vários botões de \"Ação rápida\"
+\n - Configure o ecrã do mapa adicionando vários botões de \"Ação rápida\"
 \n
-\n - Melhoria da legibilidade dos dados nos gráficos
+\n - Melhorada a legibilidade dos dados nos gráficos
 \n
-\n - Adicionados filtros por dados do sensor para trilhos
+\n - Adicionados filtros por dados do sensor em trilhos
 \n
-\n - Personalização melhorada da aparência para o grupo de faixas
+\n - Personalização da aparência melhorada para grupos de trilhos
 \n
 \n - Adicionado suporte para etiquetas GPX adicionais
 \n
@@ -5664,7 +5663,7 @@
 \n
 \n - Interface unificada para seleção de trilhos
 \n
-\n - Início de sessão do OpenStreetMap alterado para OAuth 2.0
+\n - Autenticação no OpenStreetMap alterada para OAuth 2.0
 \n
 \n</string>
     <string name="distance_during_navigation">Distância durante a navegação</string>
@@ -5682,4 +5681,55 @@
     <string name="change_default_appearance_confirmation">Alterar a aparência padrão de %1$s?</string>
     <string name="unchanged_parameter_summary">Cada trilho irá reter os seus próprios parâmetros.</string>
     <string name="shared_string_unchanged">Inalterado</string>
+    <string name="fix_north_up">Ativar o norte fixo para cima</string>
+    <string name="fix_north_up_descr">Não rodar o mapa com gestos na orientação do mapa de norte para cima</string>
+    <string name="use_3d_track_visualization">Visualização 3D</string>
+    <string name="shared_string_changes">Alterações</string>
+    <string name="change_default_tracks_appearance_confirmation">Aplicar alterações aos trilhos existentes na pasta ou apenas aos novos?</string>
+    <string name="apply_only_to_new">Aplicar apenas a novos</string>
+    <string name="release_4_8">• A ser preparado para 4.8</string>
+    <string name="shared_string_scale">Escala</string>
+    <string name="relief_3d_download_description">São necessários mapas adicionais para visualizar o terreno no mapa.</string>
+    <string name="vertical_exaggeration_description">Ao alterar o valor da escala, o relevo 3D é realçado.</string>
+    <string name="vertical_exaggeration">Exagero vertical</string>
+    <string name="delete_actions_button">Botão eliminar</string>
+    <string name="use_nearby_roads_summary">Utiliza o mapa offline para encontrar estradas próximas e dados de elevação. Pode ajustar a geometria da via.</string>
+    <string name="retrieve_elevation_data_summary">O OsmAnd pode obter dados de elevação a partir de estradas ou mapas de terreno próximos.</string>
+    <string name="shared_string_osm_id">ID do OSM</string>
+    <string name="delete_actions_button_confirmation">Quer mesmo eliminar \"%1$s\" com todas as ações adicionadas?</string>
+    <string name="use_terrain_maps_summary">Utiliza mapas de terreno para dados de elevação. A geometria do trilho mantém-se inalterada.</string>
+    <string name="use_terrain_maps">Usar mapas de terreno</string>
+    <string name="use_nearby_roads">Usar estradas nas proximidades</string>
+    <string name="visualized_by">Visualizado por</string>
+    <string name="top_and_bottom">Topo e base</string>
+    <string name="required_maps">Mapas necessários</string>
+    <string name="missing_maps_description">Alguns mapas offline necessários para este itinerário estão em falta ou não estão atualizados. Descarregue ou atualize estes mapas.</string>
+    <string name="missing_maps_header">Mapas em falta ou desatualizados</string>
+    <string name="route_line_use_coloring_speed">A linha da rota é colorida de acordo com a velocidade do movimento.</string>
+    <string name="route_line_use_coloring_altitude">A linha do itinerário é colorida por altitude de elevação.</string>
+    <string name="top">Topo</string>
+    <string name="bottom">Base</string>
+    <string name="wall_color">Cor das paredes</string>
+    <string name="track_line">Linha do trilho</string>
+    <string name="upward_gradient">Gradiente ascendente</string>
+    <string name="title_3d_track">Trilho 3D</string>
+    <string name="explore_3d_track_description">Explore o trilho em 3D interativo! Visualize a altura, a velocidade e muito mais diretamente no mapa.</string>
+    <string name="maps_that_also_be_used">Mapas que também podem ser utilizados: %1$s</string>
+    <string name="required_maps_calculate_online_summary">A lista de mapas em falta baseia-se no percurso em linha reta. Para obter uma lista exata de mapas, o OsmAnd pode pré-calcular o seu percurso online.</string>
+    <string name="fixed_height">Altura fixa</string>
+    <string name="getting_list_of_required_maps">A obter lista de mapas necessários…</string>
+    <string name="downward_gradient">Gradiente descendente</string>
+    <string name="track_vertical_exaggeration_description">Ao alterar o valor da escala, pode alterar a altura do trilho 3D.</string>
+    <string name="gpx_approximation_geo_cpp">Baseado em geometria (C++, rápido)</string>
+    <string name="allow_display_on_top">Permitir visualização sobreposta</string>
+    <string name="allow_display_on_top_description">Permitir a apresentação de textos de mapas sobrepostos</string>
+    <string name="show_debug_info">Mostrar informação de depuração</string>
+    <string name="show_debug_info_description">Apresentar informações gráficas sobre a colocação de cada texto do mapa</string>
+    <string name="map_text">Textos do mapa</string>
+    <string name="routing_attr_avoid_cobblestone_name">Evitar pedras irregulares</string>
+    <string name="routing_attr_avoid_cobblestone_description">Evitar pedras irregulares</string>
+    <string name="steps_per_minute_unit">PPM</string>
+    <string name="disable_map_layers">Desativar camadas de mapas</string>
+    <string name="disable_map_layers_descr">Desativar todas as camadas de mapas por cima do mapa vetorial (é necessário reiniciar).</string>
+    <string name="height_legend_description">São utilizados mapas de cores de altitude para visualizar o relevo.</string>
 </resources>

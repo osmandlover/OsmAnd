@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.stream.Collectors;
 
 public class GpxDbHelper implements GpxDbReaderCallback {
 	private static final Log LOG = PlatformUtil.getLog(GpxDbHelper.class);
@@ -37,6 +38,7 @@ public class GpxDbHelper implements GpxDbReaderCallback {
 	private final Map<File, GpxDataItemCallback> readingItemsCallbacks = new ConcurrentHashMap<>();
 
 	private GpxReaderTask readerTask;
+	public static long readTrackItemCount = 0;
 
 	public interface GpxDataItemCallback {
 
@@ -59,25 +61,19 @@ public class GpxDbHelper implements GpxDbReaderCallback {
 
 	public void loadGpxItems() {
 		long start = System.currentTimeMillis();
-		long batchTime = System.currentTimeMillis();
 		List<GpxDataItem> items = getItems();
 
-		int counter = 0;
-		for (GpxDataItem item : items) {
+		Map<File, Boolean> fileExistenceMap = items.stream().collect(Collectors.toMap(GpxDataItem::getFile, item -> item.getFile().exists()));
+
+		items.forEach(item -> {
 			File file = item.getFile();
-			if (file.exists()) {
-				putToCache(item);
+			if (Boolean.TRUE.equals(fileExistenceMap.get(file))) {
+				dataItems.put(file, item);
 			} else {
 				remove(file);
 			}
-			counter++;
-			if (counter % 100 == 0) {
-				long endTime = System.currentTimeMillis();
-				LOG.info("Loading tracks batch. took " + (endTime - batchTime) + "ms");
-				batchTime = endTime;
-			}
-		}
-		LOG.info("Time to loadGpxItems " + (System.currentTimeMillis() - start) + " ms items count " + items.size());
+		});
+		LOG.info("Time to loadGpxItems " + (System.currentTimeMillis() - start) + " ms, " + items.size() + " items");
 	}
 
 	public void loadGpxDirItems() {
@@ -121,6 +117,7 @@ public class GpxDbHelper implements GpxDbReaderCallback {
 			}
 			putToCache(newItem);
 			removeFromCache(currentFile);
+			updateDefaultAppearance(newItem, false);
 		}
 		return success;
 	}
@@ -145,9 +142,9 @@ public class GpxDbHelper implements GpxDbReaderCallback {
 	}
 
 	public boolean add(@NonNull GpxDataItem item) {
-		checkDefaultAppearance(item);
 		boolean res = database.add(item);
 		putToCache(item);
+		updateDefaultAppearance(item, true);
 		return res;
 	}
 
@@ -212,6 +209,7 @@ public class GpxDbHelper implements GpxDbReaderCallback {
 		}
 		GpxDataItem item = dataItems.get(file);
 		if (GpxDbUtils.isAnalyseNeeded(item) && !isGpxReading(file)) {
+			readTrackItemCount++;
 			readGpxItem(file, item, callback);
 		}
 		return item;
@@ -238,18 +236,20 @@ public class GpxDbHelper implements GpxDbReaderCallback {
 		return items;
 	}
 
-	private void checkDefaultAppearance(@NonNull GpxDataItem item) {
+	private void updateDefaultAppearance(@NonNull GpxDataItem item, boolean updateExistingValues) {
 		File file = item.getFile();
 		File dir = file.getParentFile();
 		if (dir != null) {
 			GpxDirItem dirItem = getGpxDirItem(dir);
 
 			for (GpxParameter parameter : GpxParameter.getAppearanceParameters()) {
-				Object value = dirItem.getParameter(parameter);
-				if (value != null) {
-					item.setParameter(parameter, value);
+				Object value = item.getParameter(parameter);
+				Object defaultValue = dirItem.getParameter(parameter);
+				if (defaultValue != null && (updateExistingValues || value == null)) {
+					item.setParameter(parameter, defaultValue);
 				}
 			}
+			updateDataItem(item);
 		}
 	}
 

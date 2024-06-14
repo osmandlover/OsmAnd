@@ -1252,7 +1252,7 @@
     <string name="rendering_attr_moreDetailed_name">Více detailů</string>
     <string name="rendering_attr_lessDetailed_name">Méně detailů</string>
     <string name="rendering_attr_hideAccess_name">Omezení přístupu</string>
-    <string name="rendering_attr_showAccess_name">Zobrazit omezení přístupu</string>
+    <string name="rendering_attr_showAccess_name">Zobrazit omezení přístupu a mýto</string>
     <string name="rendering_attr_showSurfaceGrade_name">Zobrazit kvalitu cesty</string>
     <string name="rendering_attr_subwayMode_name">Trasy metra</string>
     <string name="pause_navigation">Pozastavit navigaci</string>
@@ -4472,8 +4472,8 @@
     <string name="rendering_attr_OSMMapperAssistantNote_description">Zobrazit značky poznámek</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_name">Ikony při malém přiblížení</string>
     <string name="rendering_attr_OSMMapperAssistantIconsLowZooms_description">Schematické zobrazení ikon při malém přiblížení</string>
-    <string name="rendering_attr_showWaterwayTunnels_name">Tunely vodních cest</string>
-    <string name="rendering_attr_showWaterwayTunnels_description">Neskrývat tunely vodních cest</string>
+    <string name="rendering_attr_showWaterwayTunnels_name">Zvýšit viditelnost tunelů vodních cest</string>
+    <string name="rendering_attr_showWaterwayTunnels_description">Zvýšit viditelnost tunelů vodních cest</string>
     <string name="shared_string_open_street_map">OpenStreetMap</string>
     <string name="rendering_attr_seabedDetail_name">Detaily mořského dna</string>
     <string name="rendering_value_category_name">Kategorie</string>
@@ -4726,7 +4726,6 @@
     <string name="determine_location">Umožněte nám určit vaši polohu</string>
     <string name="weather_precip_in">v</string>
     <string name="display_position_automatic_descr">Závisí na orientaci mapy: dole pro režim ve směru pohybu, uprostřed pro všechny ostatní.</string>
-    <string name="change_default_tracks_appearance_confirmation_description">Změnit vzhled %1$s stop\?</string>
     <string name="no_visible_tracks_description">Vyberte stopy k zobrazení na mapě.</string>
     <string name="no_visible_tracks">Žádné stopy na mapě</string>
     <string name="recently_visible">Nedávno viditelné %1$s</string>
@@ -5081,7 +5080,7 @@
     <string name="sort_date_ascending">Nejnovější datum jako první</string>
     <string name="sort_date_descending">Nejstarší datum jako první</string>
     <string name="selected_value">Vybraná hodnota</string>
-    <string name="sort_duration_ascending">Kratší doba trvání jako první</string>
+    <string name="sort_duration_ascending">Nejkratší doba trvání jako první</string>
     <string name="sort_duration_descending">Delší doba trvání jako první</string>
     <string name="clear_online_cache_description">Tím vymažete veškerou mezipaměť pro online dlaždice počasí.</string>
     <string name="clear_online_cache">Smazat online mezipaměť</string>
@@ -5163,7 +5162,7 @@
 \n- Senzor je aktivován
 \n- Toto zařízení je umístěno v blízkosti senzoru</string>
     <string name="ant_plus_pair_new_sensor_ble">Párování senzoru Bluetooth LE</string>
-    <string name="delete_track_folder_dialog_message">Tím se odstraní složka \"%1$s\" a všechny stopy (%2$s) v ní obsažené.</string>
+    <string name="delete_track_folder_dialog_message">Tím se odstraní složka \"%1$s\" a všech %2$s stop v ní obsažených.</string>
     <string name="delete_folder_question">Smazat složku\?</string>
     <string name="delete_folder">Smazat složku</string>
     <string name="show_all_tracks_on_the_map">Zobrazit všechny stopy na mapě</string>
@@ -5455,7 +5454,7 @@
     <string name="save_as_smart_folder">Uložit jako chytrou složku</string>
     <string name="shared_string_show_icon">Zobrazit ikonu</string>
     <string name="shared_string_loading">Načítání</string>
-    <string name="delete_smart_folder_dialog_message">Tím se odstraní chytrá složka \"%1$s\".</string>
+    <string name="delete_smart_folder_dialog_message">Tím se odstraní chytrá složka \"%1$s\". (Žádné stopy nebudou smazány.)</string>
     <string name="discard_filter_changes_prompt">Resetovat všechny filtry?</string>
     <string name="no_config_smart_folder_description">Chytré složky umožňují seskupovat trasy podle použitých filtrů</string>
     <string name="loading_tracks">Znovu načítání tras</string>
@@ -5640,6 +5639,8 @@
 \n
 \n• Přidané filtry pro stopy podle dat ze snímačů
 \n
+\n• Vylepšené přizpůsobení vzhledu pro skupiny stop
+\n
 \n• Přidaná podpora dalších GPX značek
 \n
 \n• Nastavitelná \"Vzdálenost během navigace\": zvolte mezi přesnými nebo zaokrouhlenými čísly
@@ -5670,4 +5671,11 @@
     <string name="precise">Přesná</string>
     <string name="round_up">Zaokrouhlená</string>
     <string name="lang_ta_in">Tamilština (Indie)</string>
+    <string name="delete_actions_button_confirmation">Opravdu chcete odstranit \"%1$s\" se všemi přidanými akcemi?</string>
+    <string name="delete_actions_button">Tlačítko Smazat</string>
+    <string name="release_4_8">• Připraveno pro 4.8</string>
+    <string name="use_terrain_maps_summary">Používá terénní mapy pro údaje o nadmořské výšce. Geometrie trasy zůstává nezměněna.</string>
+    <string name="shared_string_osm_id">OSM ID</string>
+    <string name="relief_3d_download_description">Pro zobrazení terénu na mapě jsou potřeba další mapy.</string>
+    <string name="shared_string_scale">Měřítko</string>
 </resources>

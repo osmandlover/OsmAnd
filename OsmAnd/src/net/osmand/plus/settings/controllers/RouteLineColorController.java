@@ -96,7 +96,7 @@ public class RouteLineColorController extends ColoringStyleCardController
 				@Override
 				protected PaletteColor provideSelectedColorForPaletteMode(@NonNull PaletteMode paletteMode) {
 					boolean useNightMap = Objects.equals(paletteMode.getTag(), PALETTE_MODE_ID_NIGHT);
-					return colorsCollection.findPaletteColor(routeLinePreview.getCustomColor(useNightMap));
+					return collection.findPaletteColor(routeLinePreview.getCustomColor(useNightMap));
 				}
 
 				@NonNull
@@ -128,7 +128,11 @@ public class RouteLineColorController extends ColoringStyleCardController
 					} else if (routeInfoAttribute != null) {
 						String key = routeInfoAttribute.replaceAll(ROUTE_INFO_PREFIX, "");
 						return AndroidUtils.getStringRouteInfoPropertyDescription(app, key);
-					} else if (coloringType.isGradient()) {
+					} else if (coloringType == ColoringType.ALTITUDE) {
+						return app.getString(R.string.route_line_use_coloring_altitude);
+					} else if (coloringType == ColoringType.SPEED) {
+						return app.getString(R.string.route_line_use_coloring_speed);
+					} else if (coloringType == ColoringType.SLOPE) {
 						return app.getString(R.string.route_line_use_gradient_coloring);
 					}
 					return null;

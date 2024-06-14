@@ -26,6 +26,8 @@ public class GPXTrackAnalysis {
 
 	public static final Log LOG = PlatformUtil.getLog(GPXTrackAnalysis.class);
 
+	// Increase carefully if really necessary! This causes the statistics of all tracks to be recalculated.
+	// Next value is 3!
 	public static final int ANALYSIS_VERSION = 1;
 
 	public String name;
@@ -55,8 +57,8 @@ public class GPXTrackAnalysis {
 	public double top = 0;
 	public double bottom = 0;
 
-	public List<PointAttributes> pointAttributes;
-	public Set<String> availableAttributes;
+	public List<PointAttributes> pointAttributes = new ArrayList<>();
+	public Set<String> availableAttributes = new HashSet<>();
 
 	public boolean hasSpeedInTrack = false;
 

@@ -380,16 +380,13 @@ public class ExternalApiHelper {
 			} else if (API_CMD_PAUSE_NAVIGATION.equals(cmd)) {
 				RoutingHelper routingHelper = mapActivity.getRoutingHelper();
 				if (routingHelper.isRouteCalculated() && !routingHelper.isRoutePlanningMode()) {
-					routingHelper.setRoutePlanningMode(true);
-					routingHelper.setFollowingMode(false);
-					routingHelper.setPauseNavigation(true);
+					routingHelper.pauseNavigation();
 					resultCode = Activity.RESULT_OK;
 				}
 			} else if (API_CMD_RESUME_NAVIGATION.equals(cmd)) {
 				RoutingHelper routingHelper = mapActivity.getRoutingHelper();
 				if (routingHelper.isRouteCalculated() && routingHelper.isRoutePlanningMode()) {
-					routingHelper.setRoutePlanningMode(false);
-					routingHelper.setFollowingMode(true);
+					routingHelper.resumeNavigation();
 					AndroidUtils.requestNotificationPermissionIfNeeded(mapActivity);
 					resultCode = Activity.RESULT_OK;
 				}
@@ -625,6 +622,7 @@ public class ExternalApiHelper {
 		return result;
 	}
 
+	@Nullable
 	private ApplicationMode findNavigationProfile(@NonNull OsmandApplication app, @Nullable String profileStr) {
 		if (!ApplicationMode.DEFAULT.getStringKey().equals(profileStr)) {
 			ApplicationMode profile = ApplicationMode.valueOfStringKey(profileStr, ApplicationMode.CAR);
@@ -635,6 +633,16 @@ public class ExternalApiHelper {
 			}
 		}
 		return null;
+	}
+
+	@Nullable
+	public static ApplicationMode getNavigationProfile(@NonNull OsmandApplication app) {
+		ApplicationMode appMode = app.getRoutingHelper().getAppMode();
+		List<ApplicationMode> modes = ApplicationMode.getModesForRouting(app);
+		if (modes.size() > 0 && !modes.contains(appMode)) {
+			return modes.iterator().next();
+		}
+		return appMode;
 	}
 
 	public static void updateTurnInfo(String prefix, Bundle bundle, NextDirectionInfo nextInfo) {

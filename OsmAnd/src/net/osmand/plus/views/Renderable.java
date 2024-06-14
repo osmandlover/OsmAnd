@@ -15,7 +15,11 @@ import net.osmand.gpx.GPXUtilities.WptPt;
 import net.osmand.data.QuadRect;
 import net.osmand.data.RotatedTileBox;
 import net.osmand.plus.routing.ColoringType;
+import net.osmand.plus.track.Gpx3DLinePositionType;
+import net.osmand.plus.track.Gpx3DVisualizationType;
+import net.osmand.plus.track.Gpx3DWallColorType;
 import net.osmand.plus.track.GradientScaleType;
+import net.osmand.plus.track.Track3DStyle;
 import net.osmand.plus.views.layers.MapTileLayer;
 import net.osmand.plus.views.layers.geometry.GpxGeometryWay;
 import net.osmand.router.RouteSegmentResult;
@@ -87,7 +91,11 @@ public class Renderable {
 
         protected GpxGeometryWay geometryWay;
         protected boolean drawArrows;
-        protected boolean use3DVisualization;
+        protected Gpx3DVisualizationType trackVisualizationType = Gpx3DVisualizationType.NONE;
+        protected Gpx3DWallColorType trackWallColorType = Gpx3DWallColorType.NONE;
+        protected Gpx3DLinePositionType trackLinePosition = Gpx3DLinePositionType.TOP;
+        protected float additionalExaggeration;
+        protected float elevationMeters;
 
         public RenderableSegment(List<WptPt> points, double segmentSize) {
             this.points = points;
@@ -105,9 +113,33 @@ public class Renderable {
             return changed;
         }
 
-        public boolean setUse3DVisualization(boolean use3DVisualization) {
-            boolean changed = this.use3DVisualization != use3DVisualization;
-            this.use3DVisualization = use3DVisualization;
+        public boolean setTrackVisualizationType(Gpx3DVisualizationType trackVisualizationType) {
+            boolean changed = this.trackVisualizationType != trackVisualizationType;
+            this.trackVisualizationType = trackVisualizationType;
+            return changed;
+        }
+
+        public boolean setTrackWallColorType(Gpx3DWallColorType trackWallColorType) {
+            boolean changed = this.trackWallColorType != trackWallColorType;
+            this.trackWallColorType = trackWallColorType;
+            return changed;
+        }
+
+        public boolean setTrackLineColorType(Gpx3DLinePositionType trackLinePosition) {
+            boolean changed = this.trackLinePosition != trackLinePosition;
+            this.trackLinePosition = trackLinePosition;
+            return changed;
+        }
+
+        public boolean setAdditionalExaggeration(float additionalExaggeration) {
+            boolean changed = this.additionalExaggeration != additionalExaggeration;
+            this.additionalExaggeration = additionalExaggeration;
+            return changed;
+        }
+
+        public boolean setElevationMeters(float elevationMeters) {
+            boolean changed = this.elevationMeters != elevationMeters;
+            this.elevationMeters = elevationMeters;
             return changed;
         }
 
@@ -193,17 +225,19 @@ public class Renderable {
         public void drawGeometry(@NonNull Canvas canvas, @NonNull RotatedTileBox tileBox,
                                  @NonNull QuadRect quadRect, int trackColor, float trackWidth,
                                  @Nullable float[] dashPattern) {
-            drawGeometry(canvas, tileBox, quadRect, trackColor, trackWidth, dashPattern, drawArrows, use3DVisualization);
+            Track3DStyle track3DStyle = new Track3DStyle(trackVisualizationType, trackWallColorType, trackLinePosition, additionalExaggeration, elevationMeters);
+            drawGeometry(canvas, tileBox, quadRect, trackColor, trackWidth, dashPattern, drawArrows, track3DStyle);
         }
 
         public void drawGeometry(@NonNull Canvas canvas, @NonNull RotatedTileBox tileBox,
                                  @NonNull QuadRect quadRect, int trackColor, float trackWidth,
-                                 @Nullable float[] dashPattern, boolean drawArrows, boolean use3DVisualization) {
+                                 @Nullable float[] dashPattern, boolean drawArrows,
+                                 @Nullable Track3DStyle track3DStyle) {
             if (geometryWay != null) {
                 List<WptPt> points = coloringType.isRouteInfoAttribute() ? this.points : getPointsForDrawing();
                 if (!Algorithms.isEmpty(points)) {
                     geometryWay.setTrackStyleParams(trackColor, trackWidth, dashPattern, drawArrows,
-                            use3DVisualization, coloringType, routeInfoAttribute);
+                            track3DStyle, coloringType, routeInfoAttribute);
                     geometryWay.updateSegment(tileBox, points, routeSegments);
                     geometryWay.drawSegments(tileBox, canvas, quadRect.top, quadRect.left,
                             quadRect.bottom, quadRect.right, null, 0);

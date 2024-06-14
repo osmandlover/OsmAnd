@@ -37,7 +37,6 @@ import net.osmand.plus.importfiles.ui.FileExistBottomSheet;
 import net.osmand.plus.importfiles.ui.FileExistBottomSheet.SaveExistingFileListener;
 import net.osmand.plus.myplaces.MyPlacesActivity;
 import net.osmand.plus.myplaces.favorites.dialogs.FragmentStateHolder;
-import net.osmand.plus.myplaces.tracks.ItemsSelectionHelper.SelectionHelperProvider;
 import net.osmand.plus.myplaces.tracks.dialogs.AddNewTrackFolderBottomSheet;
 import net.osmand.plus.myplaces.tracks.dialogs.BaseTrackFolderFragment;
 import net.osmand.plus.myplaces.tracks.dialogs.MoveGpxFileBottomSheet;
@@ -123,6 +122,9 @@ public class TrackFoldersHelper implements OnTrackFileMoveListener {
 	}
 
 	public void reloadTracks() {
+		if (asyncLoader != null && asyncLoader.getStatus() == Status.RUNNING) {
+			asyncLoader.cancel(false);
+		}
 		asyncLoader = new TrackFolderLoaderTask(app, rootFolder, loadTracksListener);
 		asyncLoader.executeOnExecutor(singleThreadExecutor);
 	}
@@ -268,7 +270,7 @@ public class TrackFoldersHelper implements OnTrackFileMoveListener {
 				.setTitleId(R.string.shared_string_show_on_map)
 				.setIcon(getContentIcon(R.drawable.ic_show_on_map))
 				.setOnClickListener(v -> {
-					gpxSelectionHelper.saveTracksVisibility(selectedTrackItems);
+					gpxSelectionHelper.saveTracksVisibility(selectedTrackItems, false);
 					dismissFragment(fragment, false);
 				})
 				.create()

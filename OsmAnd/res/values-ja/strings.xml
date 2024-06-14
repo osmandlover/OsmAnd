@@ -139,7 +139,7 @@ MB)をダウンロードしますか?</string>
     <string name="items_were_selected">{0} 件のアイテムを選択</string>
     <string name="filter_existing_indexes">ダウンロードされたフィルタ</string>
     <string name="shared_string_select_all">全て選択</string>
-    <string name="shared_string_refresh">リロード</string>
+    <string name="shared_string_refresh">更新</string>
     <string name="general_settings_descr">アプリの表示オプションや共通の設定をおこないます。</string>
     <string name="general_settings">全般設定</string>
     <string name="index_settings_descr">マップなどのデータを取得/更新します</string>
@@ -607,7 +607,7 @@ POIの更新は利用できません</string>
     <string name="av_video_format">動画出力形式</string>
     <string name="av_use_external_recorder_descr">動画撮影時にシステムレコーダを使用します。</string>
     <string name="av_use_external_recorder">システムレコーダを使用</string>
-    <string name="av_use_external_camera_descr">写真の撮影にシステムアプリケーションを使用します</string>
+    <string name="av_use_external_camera_descr">写真の撮影にシステムアプリケーションを使用します。</string>
     <string name="av_use_external_camera">カメラアプリを使用</string>
     <string name="av_settings_descr">音声と動画に関する設定をします。</string>
     <string name="av_settings">音声/動画設定</string>
@@ -820,7 +820,7 @@ POIの更新は利用できません</string>
     <string name="shared_string_help">ヘルプ</string>
     <string name="accessibility_mode">アクセシビリティモード</string>
     <string name="accessibility_mode_descr">アクセシビリティ(ユーザー補助)機能を設定します</string>
-    <string name="shared_string_on">On</string>
+    <string name="shared_string_on">有効</string>
     <string name="shared_string_off">OFF</string>
     <string name="accessibility_default">デバイス側のユーザー補助設定に従う</string>
     <string name="backToMenu">メニューに戻る</string>
@@ -3675,7 +3675,7 @@ POIの更新は利用できません</string>
     <string name="uninstall_speed_cameras">スピードカメラデータの削除</string>
     <string name="shared_string_legal">法的事項</string>
     <string name="speed_camera_pois">スピードカメラPOI</string>
-    <string name="speed_cameras_legal_descr">一部の国や地域では、スピードカメラ警告機能の使用が法律で禁止されています。
+    <string name="speed_cameras_legal_descr">一部の国や地域では、スピードカメラ警告アプリの使用が法律で禁止されています。
 \n
 \n国の法律に基づいて、使用を望むかどうかを決定する必要があります。
 \n
@@ -4481,7 +4481,7 @@ POIの更新は利用できません</string>
     <string name="track_file">経路ファイル</string>
     <string name="turn_arrows">方向転換の矢印</string>
     <string name="shared_string_size">サイズ</string>
-    <string name="created_on">以下で作成する</string>
+    <string name="created_on">作成日</string>
     <string name="use_routing_fallback">オフラインルーティング代替処理</string>
     <string name="use_routing_fallback_description">オンラインルーティングが利用できない場合は、オフラインルーティングを使用してください。</string>
     <string name="gps_filter_precision">GPS精度</string>
@@ -4887,7 +4887,6 @@ POIの更新は利用できません</string>
     <string name="rendering_attr_showTrainRoutes_name">鉄道路線</string>
     <string name="shared_string_item">アイテム</string>
     <string name="simulation_constant_mode_title">定速走行</string>
-    <string name="change_default_tracks_appearance_confirmation_description">%1$s経路の外観を変更しますか？</string>
     <string name="no_visible_tracks_description">マップ上に表示する経路を選択します。</string>
     <string name="no_visible_tracks">マップ上に経路がありません</string>
     <string name="ant_missing_dependency_descr">必要なサービス\"%1$s\"が見つかりませんでした。
@@ -5305,7 +5304,7 @@ POIの更新は利用できません</string>
     <string name="remove_widget_first">まずウィジェットを削除してください</string>
     <string name="help_article_map_track_context_menu_name">経路コンテキストメニュー</string>
     <string name="date_of_creation">作成日</string>
-    <string name="key_is_already_assigned_error">\"%1$s\" キーはすでに別のアクション\"%2$s\"に割り当てられています</string>
+    <string name="key_is_already_assigned_error">\"%1$s\" キーは既にアクション\"%2$s\"に割り当てられています</string>
     <string name="add_row">行を追加</string>
     <string name="discard_changes_prompt">変更を破棄してもよろしいですか？</string>
     <string name="help_article_map_legend_osmand_name">OsmAndマップのスタイル</string>
@@ -5325,4 +5324,27 @@ POIの更新は利用できません</string>
     <string name="help_article_navigation_routing_boat_navigation_name">ボートルーティング</string>
     <string name="see_all_plans">すべてのプランを見る</string>
     <string name="help_article_navigation_routing_bicycle_based_routing_name">自転車ルーティング (MTB)</string>
+    <string name="rendering_attr_showToll_name">料金制限の表示</string>
+    <string name="shared_string_new_track">新規経路</string>
+    <string name="track_not_recorded">記録データ無し</string>
+    <string name="free_favorites_backup_description">OsmAnd Cloudに登録すると、お気に入りと設定を無料でバックアップできます。</string>
+    <string name="free_favorites_backup">お気に入りバックアップ(無料)</string>
+    <string name="relief_3d">3Dレリーフマップ</string>
+    <string name="rendering_attr_showToll_description">道路の料金制限を表示します</string>
+    <string name="relief_3d_description">ご近所や大陸全体のスケールモデルを利用し道案内に役立てて下さい。</string>
+    <string name="reset_key_assignments">キー割り当てをリセット</string>
+    <string name="key_assignments">キー割り当て</string>
+    <string name="clear_key_assignment">キー割り当ての初期化</string>
+    <string name="use_raster_sqlitedb_for_slope_hillshade">陰影起伏／傾斜にRaster-SQLiteDBを使用</string>
+    <string name="reset_key_assignments_desc">選択したすべてのキー割り当てが削除されます。</string>
+    <string name="clear_key_assignment_desc">選択したアクションのキー割り当てが消去され\"なし\"に設定されます。</string>
+    <string name="key_assignments_already_cleared_message">すべてのキー割り当てはすでに初期化されています</string>
+    <string name="camera_app">カメラアプリ</string>
+    <string name="use_v1_auto_zoom">不連続オートズーム（旧バージョン）</string>
+    <string name="get_osmand_cloud">OsmAnd Cloudを入手</string>
+    <string name="speedometer_description">GPSを基にあなたの現在の速度を表示します</string>
+    <string name="shared_string_speedometer">スピードメーター</string>
+    <string name="cache_size">キャッシュサイズ</string>
+    <string name="map_3d_mode_action">3Dモード</string>
+    <string name="map_2d_mode_action">2Dモード</string>
 </resources>

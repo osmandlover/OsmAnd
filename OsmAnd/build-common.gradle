@@ -3,8 +3,8 @@ task printc {
 }
 
 android {
-	compileSdk 33
-	buildToolsVersion = "33.0.2"
+	compileSdk 34
+	buildToolsVersion = "34.0.0"
 	// compileNdkVersion "android-ndk-r17b"
 
 	defaultConfig {
@@ -134,23 +134,10 @@ task validateTranslate {
 	}
 }
 
-
-task downloadDefaultWikivoyage(type: Download) {
-	src 'https://creator.osmand.net/basemap/Default_wikivoyage_2.travel.obf'
-	dest 'assets/Default_wikivoyage.travel.obf'
-	onlyIfModified true
-}
-
 task downloadWorldMiniBasemap(type: Download)  {
 	src 'https://creator.osmand.net/basemap/World_basemap_mini_2.obf'
 	dest 'assets/World_basemap_mini.obf'
 	onlyIfModified true
-}
-
-task downloadDefaultWikivoyageAnt {
-	doLast {
-		ant.get(src: 'https://creator.osmand.net/basemap/Default_wikivoyage_2.travel.obf', dest: 'assets/Default_wikivoyage.travel.obf', skipexisting: 'true')
-	}
 }
 
 task downloadWorldMiniBasemapAnt {
@@ -192,15 +179,9 @@ task copyProjDb(type: Copy) {
 	into "assets"
 }
 
-task copyWeatherFiles(type: Copy) {
-	from "../../resources/weather"
-	into "assets/weather"
-	include "*.*"
-}
-
-task copyHeightmapFiles(type: Copy) {
-	from "../../resources/heightmap"
-	into "assets/heightmap"
+task copyColorPalettes(type: Copy) {
+	from "../../resources/color-palette"
+	into "assets/color-palette"
 	include "*.*"
 }
 
@@ -265,11 +246,9 @@ task collectExternalResources {
 			copyLargePOIIcons,
 			validateTranslate,
 			copyProjDb,
-			copyWeatherFiles,
-			copyHeightmapFiles,
+			copyColorPalettes,
 			copyPoiCategories,
 			downloadWorldMiniBasemap,
-			downloadDefaultWikivoyage,
 			collectTestResources
 }
 
@@ -343,6 +322,7 @@ dependencies {
 	implementation 'com.google.android.material:material:1.9.0'
 	implementation 'androidx.browser:browser:1.0.0'
 	implementation 'androidx.preference:preference:1.1.0'
+	implementation 'androidx.lifecycle:lifecycle-process:2.6.0'
 	implementation fileTree(include: ['gnu-trove-osmand.jar', 'icu4j-49_1_patched.jar'], dir: 'libs')
 
 	implementation group: 'commons-logging', name: 'commons-logging', version: '1.2'

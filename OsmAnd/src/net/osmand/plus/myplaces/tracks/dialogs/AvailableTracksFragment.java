@@ -22,7 +22,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import net.osmand.PlatformUtil;
 import net.osmand.plus.R;
 import net.osmand.plus.configmap.tracks.TrackFolderLoaderTask.LoadTracksListener;
 import net.osmand.plus.configmap.tracks.TrackItem;
@@ -38,6 +37,7 @@ import net.osmand.plus.plugins.PluginsHelper;
 import net.osmand.plus.plugins.monitoring.OsmandMonitoringPlugin;
 import net.osmand.plus.track.data.SmartFolder;
 import net.osmand.plus.track.data.TrackFolder;
+import net.osmand.plus.track.data.TrackFolderAnalysis;
 import net.osmand.plus.track.data.TracksGroup;
 import net.osmand.plus.track.helpers.SelectedGpxFile;
 import net.osmand.plus.utils.FileUtils;
@@ -225,7 +225,7 @@ public class AvailableTracksFragment extends BaseTrackFolderFragment implements 
 				items.addAll(rootFolder.getTrackItems());
 			}
 		}
-		if (!isTracksEmpty) {
+		if (!isTracksEmpty && rootFolder != null) {
 			items.add(rootFolder.getFolderAnalysis());
 		}
 		return items;
@@ -515,18 +515,14 @@ public class AvailableTracksFragment extends BaseTrackFolderFragment implements 
 						}
 					}
 				}
-				if (fragment instanceof SmartFolderFragment) {
-					((SmartFolderFragment) fragment).updateContent(loadTracksFinished);
-				} else {
-					fragment.updateContent();
-				}
+				fragment.updateContent();
 			}
 		};
 	}
 
 	@Override
 	public void onSmartFolderUpdated(@NonNull SmartFolder smartFolder) {
-		adapter.updateItem(smartFolder);
+		app.runInUIThread(() -> adapter.updateItem(smartFolder));
 	}
 
 	@Override
